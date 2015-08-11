@@ -5,3 +5,28 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Board.destroy_all
+
+Board.create!([
+  {
+    name: 'First Board',
+    is_default: true,
+    is_active: true,
+    description: 'This is my first board!'
+  },
+  {
+    name: 'Another Cooler Board',
+    is_default: false,
+    is_active: true,
+    description: 'An even cooler board than before!'
+  },
+  {
+    name: 'Mind = Blown',
+    is_default: false,
+    is_active: true,
+    description: 'Words. Cannot. Describe.'
+  }
+])
+
+p "Created #{Board.count} boards."
